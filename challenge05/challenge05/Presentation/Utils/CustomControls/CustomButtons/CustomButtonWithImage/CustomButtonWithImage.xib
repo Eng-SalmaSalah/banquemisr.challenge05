@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomButtonWithImage" customModule="user" customModuleProvider="target">
+            <connections>
+                <outlet property="btnImageView" destination="dvI-C4-28V" id="d3f-vb-fJQ"/>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="LQr-Z3-scF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="172"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-C4-28V">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="172"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESt-nu-nZ7">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="172"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="didPressButton:" destination="-1" eventType="touchUpInside" id="VqP-GR-miD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0xs-g5-gJb"/>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" id="53c-Sw-hYi"/>
+                <constraint firstItem="ESt-nu-nZ7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dzq-PN-Mpn"/>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TMY-3d-YUc"/>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WC4-Kf-qSd"/>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="YSs-4C-rlz"/>
+                <constraint firstAttribute="trailing" secondItem="ESt-nu-nZ7" secondAttribute="trailing" id="wln-Fz-7ma"/>
+                <constraint firstAttribute="bottom" secondItem="ESt-nu-nZ7" secondAttribute="bottom" id="y6Z-NN-2gh"/>
+                <constraint firstItem="ESt-nu-nZ7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zoL-hv-5R3"/>
+                <constraint firstItem="dvI-C4-28V" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="zoq-Yd-pTS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-155.07246376811597" y="-254.34782608695653"/>
+        </view>
+    </objects>
+</document>

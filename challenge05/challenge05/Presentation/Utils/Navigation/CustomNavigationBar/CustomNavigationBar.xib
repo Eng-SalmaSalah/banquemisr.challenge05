@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationBar" customModule="user" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="hyy-hI-HBt"/>
+                <outlet property="navBarLeftButton" destination="Q2b-TA-4Bm" id="jRo-9u-ydo"/>
+                <outlet property="navBarRightButton" destination="FOj-te-j3z" id="Vup-kB-qlQ"/>
+                <outlet property="navBarTitle" destination="87Z-vb-QNv" id="G9E-3o-ZbG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="489" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-vM-rvw">
+                    <rect key="frame" x="0.0" y="8" width="489" height="56"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87Z-vb-QNv" customClass="CustomLabel" customModule="user" customModuleProvider="target">
+                            <rect key="frame" x="66" y="17.666666666666668" width="357" height="21.000000000000004"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2b-TA-4Bm" customClass="NavigationBarButton" customModule="user" customModuleProvider="target">
+                            <rect key="frame" x="8" y="7" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="VTK-b3-SK2"/>
+                                <constraint firstAttribute="width" constant="42" id="Wo3-ts-bsZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOj-te-j3z" customClass="NavigationBarButton" customModule="user" customModuleProvider="target">
+                            <rect key="frame" x="439" y="7" width="42" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="42" id="Cyy-wn-vU2"/>
+                                <constraint firstAttribute="height" constant="42" id="QSq-Sw-lzj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="7Mb-Sq-MUb"/>
+                        <constraint firstItem="87Z-vb-QNv" firstAttribute="centerY" secondItem="w3m-vM-rvw" secondAttribute="centerY" id="8vh-UY-k3M"/>
+                        <constraint firstItem="87Z-vb-QNv" firstAttribute="leading" secondItem="Q2b-TA-4Bm" secondAttribute="trailing" constant="16" id="Fjv-sA-CUk"/>
+                        <constraint firstAttribute="trailing" secondItem="FOj-te-j3z" secondAttribute="trailing" constant="8" id="Fus-lw-Esf"/>
+                        <constraint firstItem="Q2b-TA-4Bm" firstAttribute="leading" secondItem="w3m-vM-rvw" secondAttribute="leading" constant="8" id="Itx-lB-JV5"/>
+                        <constraint firstItem="Q2b-TA-4Bm" firstAttribute="centerY" secondItem="w3m-vM-rvw" secondAttribute="centerY" id="KMI-15-inj"/>
+                        <constraint firstItem="FOj-te-j3z" firstAttribute="centerY" secondItem="w3m-vM-rvw" secondAttribute="centerY" id="SRI-5K-4Xy"/>
+                        <constraint firstItem="FOj-te-j3z" firstAttribute="leading" secondItem="87Z-vb-QNv" secondAttribute="trailing" constant="16" id="bBW-HS-X1S"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="w3m-vM-rvw" secondAttribute="trailing" id="18t-0i-Ogn"/>
+                <constraint firstAttribute="bottom" secondItem="w3m-vM-rvw" secondAttribute="bottom" id="1Yq-m1-j2q"/>
+                <constraint firstItem="w3m-vM-rvw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="WyJ-Mr-6Dx"/>
+                <constraint firstItem="w3m-vM-rvw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vwb-LK-fqA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="106.10687022900763" y="-246.47887323943664"/>
+        </view>
+    </objects>
+</document>
