@@ -17,7 +17,7 @@ class FetchMoviesEndPoint: Endpoint {
     }
     
     var serviceURL: String {
-        return "movie/\(category.rawValue)?language=en-US&page=\(pageNumber)"
+        return "movie/\(category.rawValue)?api_key=\(TMDBConstants.apiKey)&language=en-US&page=\(pageNumber)"
     }
     
     var parameters: [String : Any]? {
