@@ -67,6 +67,17 @@
         }
       }
     },
+    "infoTitle_genre" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genre"
+          }
+        }
+      }
+    },
     "infoTitle_originalLanguage" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -9,6 +9,7 @@ import Foundation
 
 enum MovieMoreInfoCellInfoType {
     case originalTitle
+    case genre
     case status
     case releaseDate
     case runtime
@@ -24,6 +25,9 @@ enum MovieMoreInfoCellInfoType {
         switch self {
         case .originalTitle:
             return "infoTitle_originalTitle".localized
+            
+        case .genre:
+            return "infoTitle_genre".localized
             
         case .status:
             return "infoTitle_status".localized

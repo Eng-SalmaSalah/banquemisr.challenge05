@@ -75,6 +75,12 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
                                                           infoValue: originalTitle))
         }
         
+        if let genres = movie.genres, !genres.isEmpty {
+            let genreNames = genres.map { $0.name }
+            cellVMsList.append(MovieMoreInfoCellViewModel(infoType: .genre,
+                                                          infoValue: genreNames.joinedWithSeparator()))
+        }
+        
         if let status = movie.status, !status.isEmpty {
             cellVMsList.append(MovieMoreInfoCellViewModel(infoType: .status,
                                                           infoValue: status))
@@ -106,13 +112,13 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
                                                           infoValue: spokenLangugesNames.joinedWithSeparator()))
         }
         
-        if let budget = movie.budget , budget > 0 {
+        if let budget = movie.budget, budget > 0 {
             let currencyCode = movie.originCountry?.first?.currencyCode() ?? ""
             cellVMsList.append(MovieMoreInfoCellViewModel(infoType: .budget,
                                                           infoValue:"\(budget.roundedToInt) \(currencyCode)"))
         }
         
-        if let revenue = movie.revenue {
+        if let revenue = movie.revenue, revenue > 0 {
             let currencyCode = movie.originCountry?.first?.currencyCode() ?? ""
             cellVMsList.append(MovieMoreInfoCellViewModel(infoType: .revenue,
                                                           infoValue:"\(revenue.roundedToInt) \(currencyCode)"))

@@ -9,7 +9,7 @@ import Foundation
 
 extension Double {
     var roundedString: String {
-        return String(format: "%.2f", self)
+        return String(format: "%.1f", self)
     }
     
     var roundedToInt: Int {
