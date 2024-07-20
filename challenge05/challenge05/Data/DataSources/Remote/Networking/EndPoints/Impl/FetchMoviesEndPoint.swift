@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+class FetchMoviesEndPoint: Endpoint {
+    private let category: MoviesCategory
+    private let pageNumber: Int
+
+    init(category: MoviesCategory, pageNumber: Int) {
+        self.category = category
+        self.pageNumber = pageNumber
+    }
+    
+    var serviceURL: String {
+        return "movie/\(category.rawValue)?language=en-US&page=\(pageNumber)"
+    }
+    
+    var parameters: [String : Any]? {
+        return nil
+    }
+    
+    var method: HTTPMethod {
+        return .get
+    }
+}

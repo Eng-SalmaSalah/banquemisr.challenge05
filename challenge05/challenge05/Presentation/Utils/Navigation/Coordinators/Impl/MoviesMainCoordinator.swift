@@ -19,7 +19,18 @@ class MoviesMainCoordinator: Coordinator {
     }
     
     private func goToMoviesView() {
-        let mainMoviesVC = MainViewFactory.createViewController()
+        let mainMoviesVC = MainViewFactory.createViewController(coordinatorDelegate: self)
         router.setRootModule(mainMoviesVC, animated: false, completion: nil)
+    }
+    
+    private func coordinateToMovieDetails(args: MovieDetailsViewArgs) {
+        let movieDetailsCoordinator = CoordinatorsFactory.createMovieDetailsCoordinatorWith(router: router, movieDetailsViewArgs: args)
+        coordinateTo(coordinator: movieDetailsCoordinator)
+    }
+}
+
+extension MoviesMainCoordinator: MoviesVCCoordinatorDelegate {
+    func didSelectMovieWith(movieId: Int, movieName: String) {
+        coordinateToMovieDetails(args: MovieDetailsViewArgs(movieId: movieId, movieName: movieName))
     }
 }

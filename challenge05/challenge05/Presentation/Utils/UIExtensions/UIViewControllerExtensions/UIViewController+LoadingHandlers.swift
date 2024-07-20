@@ -35,13 +35,30 @@ extension UIViewController {
    
     private func startActivityIndicator(frame: CGRect) {
         DispatchQueue.main.async {
+            let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+            activityIndicator.style = .large
+            activityIndicator.color = .primaryPeach
+            activityIndicator.startAnimating()
             
+            let overlayView = UIView(frame: frame)
+            overlayView.tag = self.overlayTag
+            
+            overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            overlayView.addSubview(activityIndicator)
+            
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicator.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor).isActive = true
+            activityIndicator.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor).isActive = true
+            
+            self.view.addSubview(overlayView)
         }
     }
     
     private func stopActivityIndicator() {
         DispatchQueue.main.async {
-            
+            if let overlayView = self.view.subviews.first(where: { $0.tag == self.overlayTag }) {
+                overlayView.removeFromSuperview()
+            }
         }
     }
 }

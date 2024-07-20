@@ -29,7 +29,7 @@
                         <constraint firstAttribute="width" constant="300" id="BO1-nU-b3H"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="mHg-7q-CbD">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieImage" translatesAutoresizingMaskIntoConstraints="NO" id="mHg-7q-CbD">
                     <rect key="frame" x="57" y="218" width="300" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="tTr-T7-iJu"/>
@@ -48,7 +48,7 @@
         </view>
     </objects>
     <resources>
-        <image name="SplashImage" width="400" height="400"/>
+        <image name="movieImage" width="400" height="400"/>
         <namedColor name="darkGrey">
             <color red="0.23899999260902405" green="0.25499999523162842" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

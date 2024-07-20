@@ -46,7 +46,7 @@ extension Endpoint {
         return RequestHeadersProvider.getHeaders()
     }
 
-    func request<T: Codable>(completion: @escaping (Result<T, Error>) -> Void) {
+    func request(completion: @escaping (Result<Data, NetworkError>) -> Void) {
         NetworkService.request(
             url: self.url,
             headers: self.headers,

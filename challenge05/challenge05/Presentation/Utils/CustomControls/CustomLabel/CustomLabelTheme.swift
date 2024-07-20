@@ -118,6 +118,9 @@ struct CustomLabelThemes {
     static let bold_primaryGrey_regular = CustomLabelTheme(font: UIFont.appBoldFont(withSize: .regular),
                                                            textColor: .primaryGrey)
 
+    static let bold_black_regular = CustomLabelTheme(font: UIFont.appBoldFont(withSize: .regular),
+                                                     textColor: .black)
+    
     static let bold_black_large = CustomLabelTheme(font: UIFont.appBoldFont(withSize: .large),
                                                    textColor: .black)
     

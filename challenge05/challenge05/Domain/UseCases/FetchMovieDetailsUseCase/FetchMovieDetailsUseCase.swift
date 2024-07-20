@@ -8,5 +8,6 @@
 import Foundation
 
 protocol FetchMovieDetailsUseCase {
-    
+    func fetchMovieDetailsWith(movieId: Int,
+                               completion: @escaping (Result<Movie, any Error>) -> Void)
 }

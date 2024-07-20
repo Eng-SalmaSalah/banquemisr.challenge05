@@ -9,9 +9,11 @@ import Foundation
 
 class MovieDetailsCoordinator: Coordinator {
     var router: Router
+    var movieDetailsViewArgs: MovieDetailsViewArgs
     
-    init(router: Router) {
+    init(router: Router, movieDetailsViewArgs: MovieDetailsViewArgs) {
         self.router = router
+        self.movieDetailsViewArgs = movieDetailsViewArgs
     }
     
     func start() {
@@ -19,6 +21,13 @@ class MovieDetailsCoordinator: Coordinator {
     }
     
     private func goToMovieDetailsView() {
-   
+        let movieDetailsVC = MovieDetailsViewFactory.createViewController(arguments: movieDetailsViewArgs, coordinatorDelegate: self)
+        router.present(movieDetailsVC, animated: true, presentationStyle: .overFullScreen, completion: nil)
+    }
+}
+
+extension MovieDetailsCoordinator: MovieDetailsVCCoordinatorDelegate {
+    func didExitMovieDetails() {
+        dismiss()
     }
 }

@@ -12,4 +12,10 @@ class CoordinatorsFactory {
         let mainMoviesCoordinator = MoviesMainCoordinator(router: router)
         return mainMoviesCoordinator
     }
+    
+    static func createMovieDetailsCoordinatorWith(router: Router, movieDetailsViewArgs: MovieDetailsViewArgs) -> MovieDetailsCoordinator {
+        let movieDetailsCoordinator = MovieDetailsCoordinator(router: router,
+                                                              movieDetailsViewArgs: movieDetailsViewArgs)
+        return movieDetailsCoordinator
+    }
 }

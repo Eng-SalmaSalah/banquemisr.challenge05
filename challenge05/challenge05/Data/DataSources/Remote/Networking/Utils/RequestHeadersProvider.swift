@@ -10,6 +10,6 @@ import Foundation
 class RequestHeadersProvider {
     static func getHeaders() -> [String: String] {
         return ["Content-Type": "application/json",
-                "Authorization": "Bearer \(TMDBConstants.apiKey)"]
+                "Authorization": "Bearer \(TMDBConstants.accessToken)"]
     }
 }

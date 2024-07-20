@@ -6,3 +6,23 @@
 //
 
 import Foundation
+
+class FetchMovieDetailsEndPoint: Endpoint {
+    private let movieId: Int
+
+    init(movieId: Int) {
+        self.movieId = movieId
+    }
+    
+    var serviceURL: String {
+        return "movie/\(movieId)?language=en-US"
+    }
+    
+    var parameters: [String : Any]? {
+        return nil
+    }
+    
+    var method: HTTPMethod {
+        return .get
+    }
+}

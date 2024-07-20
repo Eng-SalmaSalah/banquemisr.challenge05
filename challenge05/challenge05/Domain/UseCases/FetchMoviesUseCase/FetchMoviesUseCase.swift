@@ -8,5 +8,7 @@
 import Foundation
 
 protocol FetchMoviesUseCase {
-    
+    func fetchMoviesWithCategory(category: MoviesCategory,
+                                 pageNumber: Int,
+                                 completion: @escaping (Result<MoviesResponseModel, any Error>) -> Void)
 }

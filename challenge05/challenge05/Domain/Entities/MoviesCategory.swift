@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum MoviesCategory {
-    case nowPlaying
-    case popular
-    case upcoming
+enum MoviesCategory: String {
+    case nowPlaying = "now_playing"
+    case popular = "popular"
+    case upcoming = "upcoming"
 }
 
