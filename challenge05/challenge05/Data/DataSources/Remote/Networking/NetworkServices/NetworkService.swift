@@ -13,7 +13,7 @@ class NetworkService {
         headers: [String: String],
         httpMethod: HTTPMethod,
         parameters: [String: Any]? = nil,
-        completion: @escaping (Result<Data, NetworkError>) -> Void
+        completion: @escaping (Result<Data, Error>) -> Void
     ) {
         
         guard let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),

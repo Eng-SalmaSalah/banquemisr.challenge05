@@ -8,8 +8,15 @@
 import Foundation
 
 class FetchMovieDetailsRepositoryImpl: FetchMovieDetailsRepository {
+    private var fetchMovieDetailsEndPoint: FetchMovieDetailsEndPoint
+    
+    init(fetchMovieDetailsEndPoint: FetchMovieDetailsEndPoint) {
+        self.fetchMovieDetailsEndPoint = fetchMovieDetailsEndPoint
+    }
+    
     func fetchMovieDetailsWith(movieId: Int, completion: @escaping ((Result<Movie, any Error>) -> Void)) {
-        FetchMovieDetailsEndPoint(movieId: movieId).request { result in
+        fetchMovieDetailsEndPoint.setEndPointValues(movieId: movieId)
+        fetchMovieDetailsEndPoint.request { result in
             switch result {
             case .success(let data):
                 do {

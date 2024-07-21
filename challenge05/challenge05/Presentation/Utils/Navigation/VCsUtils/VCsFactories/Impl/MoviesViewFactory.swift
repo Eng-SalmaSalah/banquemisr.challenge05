@@ -25,7 +25,11 @@ class MoviesViewFactory: ViewControllerFactory {
     }
     
     private static func getFetchMoviesUseCase() -> FetchMoviesUseCase {
-        return DefaultFetchMoviesUseCase(repo:  FetchMoviesRepositoryImpl())
+        return DefaultFetchMoviesUseCase(repo: getFetchMoviesRepository())
+    }
+    
+    private static func getFetchMoviesRepository() -> FetchMoviesRepository {
+        return FetchMoviesRepositoryImpl(fetchMoviesEndPoint: FetchMoviesEndPointImpl())
     }
     
 }

@@ -26,6 +26,9 @@ protocol Endpoint {
     
     /// Determind if you want to print the response in the consol or not
     var isPrintable: Bool { get }
+    
+    /// Function to call requests
+    func request(completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 extension Endpoint {
@@ -46,7 +49,7 @@ extension Endpoint {
         return RequestHeadersProvider.getHeaders()
     }
 
-    func request(completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func request(completion: @escaping (Result<Data, Error>) -> Void) {
         NetworkService.request(
             url: self.url,
             headers: self.headers,

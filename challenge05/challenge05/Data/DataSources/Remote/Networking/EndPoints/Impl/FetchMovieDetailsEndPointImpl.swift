@@ -1,5 +1,5 @@
 //
-//  FetchMovieDetailsEndPoint.swift
+//  FetchMovieDetailsEndPointImpl.swift
 //  challenge05
 //
 //  Created by Salma Salah on 19/07/2024.
@@ -7,14 +7,15 @@
 
 import Foundation
 
-class FetchMovieDetailsEndPoint: Endpoint {
-    private let movieId: Int
+class FetchMovieDetailsEndPointImpl: FetchMovieDetailsEndPoint {
+    private var movieId: Int?
 
-    init(movieId: Int) {
+    func setEndPointValues(movieId: Int) {
         self.movieId = movieId
     }
     
     var serviceURL: String {
+        guard let movieId = self.movieId else { return "" }
         return "movie/\(movieId)?api_key=\(TMDBConstants.apiKey)&language=en-US"
     }
     

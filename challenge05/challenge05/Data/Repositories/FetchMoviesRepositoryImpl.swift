@@ -8,10 +8,17 @@
 import Foundation
 
 class FetchMoviesRepositoryImpl: FetchMoviesRepository {
+    private var fetchMoviesEndPoint: FetchMoviesEndPoint
+    
+    init(fetchMoviesEndPoint: FetchMoviesEndPoint) {
+        self.fetchMoviesEndPoint = fetchMoviesEndPoint
+    }
+    
     func fetchMoviesWith(category: MoviesCategory,
                          pageNumber: Int,
                          completion: @escaping ((Result<MoviesResponseModel, any Error>) -> Void)) {
-        FetchMoviesEndPoint(category: category, pageNumber: pageNumber).request { result in
+        fetchMoviesEndPoint.setEndPointValues(category: category, pageNumber: pageNumber)
+        fetchMoviesEndPoint.request { result in
             switch result {
             case .success(let data):
                 do {
