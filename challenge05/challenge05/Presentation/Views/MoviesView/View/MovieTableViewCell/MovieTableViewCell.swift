@@ -28,6 +28,9 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     func configureWith(cellVM: MovieTableCellViewModel) {
+        contentView.isUserInteractionEnabled = true
+        isAccessibilityElement = true
+
         moviePosterImageView.image = UIImage(named: "movieImage")
 
         movieNameLabel.configureWith(value: cellVM.movieName,

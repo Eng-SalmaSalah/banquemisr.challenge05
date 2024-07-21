@@ -11,7 +11,11 @@ import Combine
 class MoviesViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet weak var moviesTableView: UITableView! {
+        didSet {
+            moviesTableView.accessibilityIdentifier = "MoviesTableView"
+        }
+    }
     
     var coordinatorDelegate: MoviesVCCoordinatorDelegate?
     private var cancellables = Set<AnyCancellable>()
@@ -95,6 +99,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
         else { return UITableViewCell() }
         
         cell.configureWith(cellVM: cellVM)
+        cell.accessibilityIdentifier = "\(indexPath.row)"
 
         guard let moviePosterPath = cellVM.moviePosterPath else {
             return cell

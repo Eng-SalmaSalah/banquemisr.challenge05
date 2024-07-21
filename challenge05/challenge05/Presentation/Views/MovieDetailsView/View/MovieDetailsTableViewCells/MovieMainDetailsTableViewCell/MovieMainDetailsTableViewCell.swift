@@ -9,7 +9,11 @@ import UIKit
 
 class MovieMainDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var moviePosterImageView: UIImageView!
-    @IBOutlet weak var movieNameLabel: CustomLabel!
+    @IBOutlet weak var movieNameLabel: CustomLabel! {
+        didSet {
+            movieNameLabel.accessibilityIdentifier = "MovieNameLabel"
+        }
+    }
     @IBOutlet weak var movieTagLineLabel: CustomLabel!
     @IBOutlet weak var movieReleaseDateLabel: CustomLabel!
     @IBOutlet weak var movieAverageRateLabel: CustomLabel!

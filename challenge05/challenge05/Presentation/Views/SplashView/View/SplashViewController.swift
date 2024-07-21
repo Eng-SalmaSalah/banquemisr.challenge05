@@ -8,9 +8,13 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    
     @IBOutlet private weak var whiteCircleView: UIView!
-    @IBOutlet private weak var appLogoImageView: UIImageView!
+    @IBOutlet private weak var appLogoImageView: UIImageView! {
+        didSet {
+            appLogoImageView.accessibilityIdentifier = "appLogoImageView"
+        }
+    }
     
     var coordinatorDelegate: SplashVCCoordinatorDelegate?
     

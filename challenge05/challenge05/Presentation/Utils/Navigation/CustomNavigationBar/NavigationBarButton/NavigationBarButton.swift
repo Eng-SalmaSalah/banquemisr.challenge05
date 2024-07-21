@@ -10,7 +10,11 @@ import UIKit
 class NavigationBarButton: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var buttonImageView: UIImageView!
-    @IBOutlet private weak var customButton: UIButton!
+    @IBOutlet private weak var customButton: UIButton! {
+        didSet{
+            customButton.accessibilityIdentifier = "NavBarButton"
+        }
+    }
     @IBOutlet private weak var unreadNotificationsView: UIView!
     @IBOutlet private weak var unreadNotificationCountLabel: UILabel!
     @IBOutlet weak var buttonLabel: CustomLabel!

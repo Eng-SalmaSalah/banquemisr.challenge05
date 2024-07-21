@@ -10,32 +10,35 @@ import XCTest
 final class challenge05UITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testAppFlow() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        // Test if splash screen is shown
+        let splashImage = app.images["appLogoImageView"]
+        XCTAssertTrue(splashImage.waitForExistence(timeout: 10), "Splash image should be visible")
+        
+        // Test if movies table view is rendered
+        let moviesTableView = app.tables["MoviesTableView"]
+        XCTAssertTrue(moviesTableView.waitForExistence(timeout: 15), "Movies table view should exist")
+        
+        // Test if navigation to details is successful
+        let firstTableCell = moviesTableView.cells.firstMatch
+        XCTAssertTrue(firstTableCell.waitForExistence(timeout: 10), "First table cell should be visible")
+        firstTableCell.tap()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        let movieNameLabel = app.staticTexts["MovieNameLabel"]
+        XCTAssertTrue(movieNameLabel.waitForExistence(timeout: 10), "Movie name label should be visible so details screen is open")
+        
+        // Test if back navigation works
+        let backButton = app.buttons["NavBarButton"]
+        XCTAssertTrue(backButton.waitForExistence(timeout: 10), "Back button should be visible")
+        backButton.tap()
+        
+        XCTAssertTrue(moviesTableView.waitForExistence(timeout: 15), "Movies table view should be visible after navigating back")
     }
 }
+
